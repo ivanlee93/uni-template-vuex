@@ -47,6 +47,7 @@ const handleRequest = (url = '', data = {}) => {
 
     return flyio.then(res => {
       // 成功返回
+      res = typeof res === 'string' ? JSON.parse(res) : res
       if (res[Config.resSuccess.key] === Config.resSuccess.value) {
         tipConfig.isLoading && Config.loading.loadingHide() // 当promise全部加载完成则隐藏loading
         return res
