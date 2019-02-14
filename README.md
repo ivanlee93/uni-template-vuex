@@ -6,14 +6,15 @@
 
 ## 通过cli方式
 ``` bash
-$ 全局安装vuecli
+# 全局安装vuecli
 $ npm install -g @vue/cli
-$ 创建uni-app
+# 创建uni-app
 $ vue create -p dcloudio/uni-preset-vue my-project 
-$ 此时，会提示选择项目模板，选择默认模板，把本模板的内容替换到官方默认版本src路面中
-$ 运行并发布uni-app
+# 此时，会提示选择项目模板，选择默认模板，把本模板的内容替换到官方默认版本src路面中
+# 运行并发布uni-app
 $ npm run dev:%PLATFORM%
 $ npm run build:%PLATFORM%
+# %PLATFORM% 可取值：h5 mp-alipay mp-weixin
 ```
 
 ## 特点
