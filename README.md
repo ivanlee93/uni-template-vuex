@@ -2,7 +2,7 @@
 使用 Vue.js 开发跨平台应用的前端框架 http://uniapp.dcloud.io
 
 # uni-template-vuex
-基于uni-app的自定义模板，封装的了vuex，和flyio请求，目前支持微信小程序和阿里小程序和H5
+基于uni-app的自定义模板，封装的了vuex自动注册，和flyio请求，目前支持微信小程序和阿里小程序和H5
 
 ## 官方HX方式
 同步/下载项目后，把项目目录拖入 HBuilderX 中即可运行体验。
