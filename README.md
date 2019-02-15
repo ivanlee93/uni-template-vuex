@@ -2,7 +2,7 @@
 使用 Vue.js 开发跨平台应用的前端框架 http://uniapp.dcloud.io
 
 # uni-template-vuex
-基于uni-app的自定义模板，封装的了vuex自动注册，和flyio请求，目前支持微信小程序和阿里小程序和H5
+基于uni-app的自定义模板，封装的了vuex自动注册，和flyio请求，目前支持微信小程序和支付宝小程序和H5
 
 ## 官方HX方式
 同步/下载项目后，把项目目录拖入 HBuilderX 中即可运行体验。
@@ -28,7 +28,7 @@ $ npm run build:%PLATFORM%
 ### 平台支持
 * H5
 * 微信小程序
-* 阿里小程序
+* 支付宝小程序
 
 ### 根据webpack的require.context及store的registerModule方法来自动注册store的modules
 >在src下增加store文件夹。具体目录如下
