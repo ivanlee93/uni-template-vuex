@@ -6,7 +6,6 @@
       <button @click="increment">+</button>
       <button @click="decrement">-</button>
     </p>
-
     <button @click="goHome" class="home">去往首页</button>
   </div>
 </template>

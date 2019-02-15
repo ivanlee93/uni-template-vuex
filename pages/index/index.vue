@@ -4,22 +4,30 @@
     <view>
       <text class="title">{{motto == '' ? title : motto}}</text>
     </view>
-
     <form class="form-container">
       <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
       <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
     </form>
     <button class="counter" @click="goCounter">去往Vuex示例页面</button>
+    <view>
+      <text class="title">我是全局数据：{{count}}</text>
+    </view>
   </view>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data () {
     return {
       title: 'Hello',
       motto: 'Hello World'
     }
+  },
+  computed: {
+    ...mapState('counter', [
+      'count'
+    ])
   },
   onLoad () {
 
