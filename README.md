@@ -7,17 +7,13 @@
 ## 官方HX方式
 同步/下载项目后，把项目目录拖入 HBuilderX 中即可运行体验。
 
-## 通过cli方式
+## [通过cli方式](https://uniapp.dcloud.io/quickstart?id=%E9%80%9A%E8%BF%87vue-cli%E5%91%BD%E4%BB%A4%E8%A1%8C)
 ``` bash
-1、全局安装vuecli
 $ npm install -g @vue/cli
-2、创建uni-app
 $ vue create -p dcloudio/uni-preset-vue my-project 
-3、此时，会提示选择项目模板，选择默认模板，把本模板的内容替换到官方模板src目录中
-   运行并发布uni-app
+$ ivanlee93/uni-template-vuex
 $ npm run dev:%PLATFORM%
 $ npm run build:%PLATFORM%
-4、%PLATFORM% 可取值：h5 mp-alipay mp-weixin
 ```
 
 ## 特点
