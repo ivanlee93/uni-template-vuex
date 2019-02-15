@@ -30,7 +30,7 @@ $ npm run build:%PLATFORM%
 * 微信小程序
 * 支付宝小程序
 
-### 根据webpack的require.context及store的registerModule方法来自动注册store的modules
+### 通用全局，根据webpack的require.context及store的registerModule方法来自动注册store的modules
 >在src下增加store文件夹。具体目录如下
 ``` js
   |__src
