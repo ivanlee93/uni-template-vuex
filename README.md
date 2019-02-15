@@ -11,7 +11,7 @@
 ``` bash
 $ npm install -g @vue/cli
 $ vue create -p dcloudio/uni-preset-vue my-project 
-$ ivanlee93/uni-template-vuex
+$ 选择自定义模板，输入 ivanlee93/uni-template-vuex
 $ npm run dev:%PLATFORM%
 $ npm run build:%PLATFORM%
 ```
