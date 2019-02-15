@@ -20,6 +20,7 @@ $ npm run build:%PLATFORM%
 * 兼容多个平台
 * 根据[vuex官方推荐](https://vuex.vuejs.org/zh-cn/intro.html)，将background API封装到actions中，具体用法可在代码里查看。
 * 自动注册store的modules，多人协作开发不需要担心代码冲突，不需要每个store.js都要import引入。
+* 思路来自[spencer1994](https://github.com/spencer1994)的开源项目，非常感谢
 
 ### 平台支持
 * H5
