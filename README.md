@@ -112,3 +112,4 @@ export default {
 ## 注意事项
 * config.js中配置与后台规定的表示响应成功的变量（或注释掉相应代码片段），否则会导致接口返回异常。
 * H5端本地调试需注意跨域问题，[参考：Chrome 调试跨域问题解决方案](http://ask.dcloud.net.cn/article/35267)
+* H5端发行发现空白问题，[参考：uni-app的H5版使用注意事项](http://ask.dcloud.net.cn/article/35232)
