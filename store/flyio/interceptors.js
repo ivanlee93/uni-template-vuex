@@ -1,13 +1,13 @@
-// #ifdef MP-WEIXIN
-const Fly = require("flyio/dist/npm/wx")
+// #ifdef H5
+const Fly = require('flyio/dist/npm/fly')
 // #endif
 
 // #ifdef MP-ALIPAY
 const Fly = require("flyio/dist/npm/ap")
 // #endif
 
-// #ifndef MP-WEIXIN || MP-ALIPAY
-const Fly = require('flyio/dist/npm/fly')
+// #ifndef MP-ALIPAY || H5
+const Fly = require("flyio/dist/npm/wx")
 // #endif
 
 const request = new Fly()
