@@ -9,7 +9,7 @@ const errorFunction = (reqConfig, err) => {
       Config.resError.tipShow(err)
     }, 0)
   }
-  throw (err)
+  throw err
 }
 
 let promises = [] // 接收接口请求的promise数组
@@ -17,7 +17,7 @@ let loadingTimer = [] // loading的定时器
 
 // 接口请求封装函数
 const handleRequest = (url = '', data = {}) => {
-  let _url = API[url] || ''
+  let _url = API[url] || url
   return (flyConfig = {}, defaultTipConfig = {}) => {
     let flyio = Flyio.request(_url, data, {
       ...Config.flyConfig,
@@ -36,27 +36,36 @@ const handleRequest = (url = '', data = {}) => {
 
     // 计算当前的promise是否全部加载完成
     promises.push(flyio.catch(e => {}))
-    Promise.all(promises).then(data => {
-      if (data.length !== promises.length) return
-      promises = [] // 所有请求完后清除promise数组
-      clearTimeout(loadingTimer) // 当请求在xxxms内完成则直接清除loading计时器
-    }).catch(() => {
-      promises = [] // 请求异常完后清除promise数组
-      clearTimeout(loadingTimer) // 请求异常则直接清除loading计时器
-    })
+    Promise.all(promises)
+      .then(data => {
+        if (data.length !== promises.length) return
+        promises = [] // 所有请求完后清除promise数组
+        clearTimeout(loadingTimer) // 当请求在xxxms内完成则直接清除loading计时器
+      })
+      .catch(() => {
+        promises = [] // 请求异常完后清除promise数组
+        clearTimeout(loadingTimer) // 请求异常则直接清除loading计时器
+      })
 
-    return flyio.then(res => {
-      // 成功返回
-      res = typeof res === 'string' ? JSON.parse(res) : res
-      if (res[Config.resSuccess.key] === Config.resSuccess.value) {
-        tipConfig.isLoading && Config.loading.loadingHide() // 当promise全部加载完成则隐藏loading
-        return res
-      } else {
-        errorFunction(tipConfig, res)
-      }
-    }).catch(err => {
-      errorFunction(tipConfig, err)
-    })
+    return flyio
+      .then(res => {
+        // 成功返回
+        res = typeof res === 'string' ? JSON.parse(res) : res
+        if (!Config.reqConfig.returnCode) {
+          tipConfig.isLoading && Config.loading.loadingHide()
+          return res
+        } else {
+          if (res[Config.resSuccess.key] === Config.resSuccess.value) {
+            tipConfig.isLoading && Config.loading.loadingHide() // 当promise全部加载完成则隐藏loading
+            return res
+          } else {
+            errorFunction(tipConfig, res)
+          }
+        }
+      })
+      .catch(err => {
+        errorFunction(tipConfig, err)
+      })
   }
 }
 

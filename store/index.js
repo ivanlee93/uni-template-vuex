@@ -9,7 +9,7 @@ const store = new Vuex.Store({})
 
 const storeContext = require.context('@/store/modules', true, /\.js$/)
 
-storeContext.keys().forEach((modules) => {
+storeContext.keys().forEach(modules => {
   store.registerModule(modules.replace(/(^\.\/)|(\.js$)/g, ''), storeContext(modules).default)
 })
 

@@ -3,16 +3,16 @@ const Fly = require('flyio/dist/npm/fly')
 // #endif
 
 // #ifdef MP-ALIPAY
-const Fly = require("flyio/dist/npm/ap")
+const Fly = require('flyio/dist/npm/ap')
 // #endif
 
 // #ifndef MP-ALIPAY || H5
-const Fly = require("flyio/dist/npm/wx")
+const Fly = require('flyio/dist/npm/wx')
 // #endif
 
 const request = new Fly()
 
-request.interceptors.request.use((request) => {
+request.interceptors.request.use(request => {
   return request
 })
 

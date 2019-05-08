@@ -21,13 +21,13 @@ export default {
   methods: {
     ...mapActions('counter', ['increment',
       'decrement', 'getProvince']),
-    goHome () {
+    goHome() {
       uni.redirectTo({
         url: '/pages/index/index'
       });
     }
   },
-  async onLoad () {
+  async onLoad() {
     // await 写法
     // try {
     //   let resp = await this.$iBox.http('globalUrl.getProvince', { city: '汕头' })({

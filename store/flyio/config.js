@@ -16,11 +16,15 @@ export default {
   reqConfig: {
     isLoading: true, // 是否展示loading，默认为true
     isErrorDefaultTip: true, // 是否展示默认错误提示，默认为true
-    errorAction: false // 是否使用自定义的错误处理方法，默认为false，如设置true则需在views层catch错误
+    errorAction: false, // 是否使用自定义的错误处理方法，默认为false，如设置true则需在views层catch错误
+    returnCode: false // 是否开启成功的判别标识
   },
   // fly的默认配置
   flyConfig: {
-    method: 'get'
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
   },
   // 运行成功的判别标识  例如res.returnCode === '0'即成功
   resSuccess: {
@@ -30,7 +34,7 @@ export default {
   // 异常情况
   resError: {
     // 异常默认提示的方法
-    tipShow: (err) => {
+    tipShow: err => {
       uni.showToast({
         title: (err && err.message) || (err && err.reason) || '服务器升级中，请稍后重试。',
         icon: 'none',

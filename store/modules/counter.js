@@ -4,36 +4,32 @@ const state = {
 }
 
 const mutations = {
-  INCREMENT: (state) => {
+  INCREMENT: state => {
     const obj = state
     obj.count += 1
   },
-  DECREMENT: (state) => {
+  DECREMENT: state => {
     const obj = state
     obj.count -= 1
   }
 }
 
 const actions = {
-  increment({
-    commit
-  }) {
+  increment({ commit }) {
     commit('INCREMENT')
   },
-  decrement({
-    commit
-  }) {
+  decrement({ commit }) {
     commit('DECREMENT')
   },
-  getProvince({
-    commit
-  }, params = {}) {
-    return Vue.iBox.http('globalUrl.getProvince', params)({
-      method: 'get'
-    }).then(res => {
-      console.log('vuex中接口返回的提示：' + res.data.provinceShort)
-      return res
-    })
+  getProvince({ commit }, params = {}) {
+    return Vue.iBox
+      .http('globalUrl.getProvince', params)({
+        method: 'get'
+      })
+      .then(res => {
+        console.log('vuex中接口返回的提示：' + res.data.provinceShort)
+        return res
+      })
   }
 }
 

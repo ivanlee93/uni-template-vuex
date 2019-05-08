@@ -9,7 +9,7 @@ export default {
    * 组件内使用： this.$iBox.validator
    * 全局使用：Vue.iBox.validator
    */
-  install (Vue) {
+  install(Vue) {
     const iBox = {
       ...auth,
       ...utils,

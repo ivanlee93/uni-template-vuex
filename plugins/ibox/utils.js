@@ -17,7 +17,7 @@ const validator = {
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  executeExp: function (pattern, strValue) {
+  executeExp: function(pattern, strValue) {
     return pattern.test(strValue)
   },
   /**
@@ -25,7 +25,7 @@ const validator = {
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isEmpty: function (strValue) {
+  isEmpty: function(strValue) {
     strValue = strValue.replace(Pattern.isEmpty, '')
     return strValue.length === 0
   },
@@ -34,7 +34,7 @@ const validator = {
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isNotEmpty: function (strValue) {
+  isNotEmpty: function(strValue) {
     return !this.isEmpty(strValue)
   },
   /**
@@ -42,7 +42,7 @@ const validator = {
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isCnAndEn: function (strValue) {
+  isCnAndEn: function(strValue) {
     if (this.isEmpty(strValue)) {
       return false
     }
@@ -54,7 +54,7 @@ const validator = {
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isCnAndEnAndNum: function (strValue) {
+  isCnAndEnAndNum: function(strValue) {
     if (this.isEmpty(strValue)) {
       return false
     }
@@ -66,7 +66,7 @@ const validator = {
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isUserName: function (strValue) {
+  isUserName: function(strValue) {
     if (this.isEmpty(strValue)) {
       return false
     }
@@ -78,7 +78,7 @@ const validator = {
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isAuthCode: function (strValue) {
+  isAuthCode: function(strValue) {
     if (this.isEmpty(strValue)) {
       return false
     }
@@ -89,7 +89,7 @@ const validator = {
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isMobile: function (strValue) {
+  isMobile: function(strValue) {
     if (this.isEmpty(strValue)) {
       return false
     }
@@ -100,7 +100,7 @@ const validator = {
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isTelAndMobile: function (strValue) {
+  isTelAndMobile: function(strValue) {
     if (this.isEmpty(strValue)) {
       return false
     }
@@ -111,7 +111,7 @@ const validator = {
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isPassword: function (strValue) {
+  isPassword: function(strValue) {
     if (this.isEmpty(strValue)) {
       return false
     }
@@ -122,7 +122,7 @@ const validator = {
    * @param obj 检验对象
    * @returns {boolean}
    */
-  isEmptyObj: (obj) => {
+  isEmptyObj: obj => {
     return Object.keys(obj).length === 0
   },
   /**
@@ -141,7 +141,6 @@ const validator = {
   isNumRange: (numValue, numArr) => {
     return numValue >= numArr[0] && numValue <= numArr[1]
   }
-
 }
 
 export default {

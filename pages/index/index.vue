@@ -18,7 +18,7 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-  data () {
+  data() {
     return {
       title: 'Hello',
       motto: 'Hello World'
@@ -29,11 +29,11 @@ export default {
       'count'
     ])
   },
-  onLoad () {
+  onLoad() {
 
   },
   methods: {
-    goCounter () {
+    goCounter() {
       uni.redirectTo({
         url: '/pages/counter/counter'
       });
